@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
   'use strict';
 
   if ($('.multiple-codes').length) {
@@ -32,7 +32,7 @@
     }
   }
 
-  if ($('.demo-tabs').length) {      
+  if ($('.demo-tabs').length) {
     $('.demo-tabs').pwstabs({
       effect: 'none'
     });
@@ -41,22 +41,22 @@
   // The function actually applying the offset
   function offsetAnchor() {
     if (location.hash.length !== 0) {
-        // window.scrollTo(window.scrollX, window.scrollY - 140);
-        $("html").animate({ scrollTop: $(location.hash).offset().top - 15 }, 300);
+      // window.scrollTo(window.scrollX, window.scrollY - 140);
+      $("html").animate({ scrollTop: $(location.hash).offset().top - 15 }, 300);
     }
   }
-  
+
   // Captures click events of all <a> elements with href starting with #
-  $(document).on('click', 'a[href^="#"]', function(event) {
-      // Click events are captured before hashchanges. Timeout
-      // causes offsetAnchor to be called after the page jump.
-      window.setTimeout(function() {
+  $(document).on('click', 'a[href^="#"]', function (event) {
+    // Click events are captured before hashchanges. Timeout
+    // causes offsetAnchor to be called after the page jump.
+    window.setTimeout(function () {
       offsetAnchor();
-      }, 0);
+    }, 0);
   });
-  
+
   // Set the offset when entering page with hash present in the url
   window.setTimeout(offsetAnchor, 0);
 
-    
+
 })(jQuery);    
